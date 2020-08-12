@@ -1,0 +1,55 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "copy-bash": "cp .env.example .env",
+    "copy-cmd": "copy .env.example .env",
+    "yarn-install": "npm i yarn -g",
+    "start": "yarn && yarn webpack-build && yarn server-dev",
+    "start-npm": "npm i && npm run webpack-build && npm run server-dev",
+    "server": "node src/server/server.js",
+    "server-dev": "nodemon src/server/server.js",
+    "webpack-build": "webpack --config src/webpack/webpack.config.js --display-error-details --mode=development --progress",
+    "webpack-dev": "webpack --config src/webpack/webpack.config.js --display-error-details --mode=development --progress --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paladin601/pokedex.git"
+  },
+  "keywords": [
+    "Terapy"
+  ],
+  "author": "Leonardo Pinzon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paladin601/pokedex/issues"
+  },
+  "homepage": "https://github.com/paladin601/pokedex#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}

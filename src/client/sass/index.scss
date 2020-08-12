@@ -1,0 +1,17 @@
+@import 'variable';
+@import 'navbar';
+
+@mixin mediaQuery($name,$size) {
+    @media (min-width:map-get($media-query,$size)){
+        @include create($name,$size);
+    }
+}
+@mixin create($name,$size) {
+    #{$name}{
+        font: map-get( $font-size, $size ) $font-style;
+    }
+}
+
+@include create("body","xs");
+@include mediaQuery("body",'sm');
+@include mediaQuery("body",'md');
