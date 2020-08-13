@@ -9,8 +9,8 @@ let manager = new api();
 window.manager = manager;
 export default () => {
     return [
-        <Nav key="0" />,
-        <Switch key="1">
+        //<Nav key="0" />,
+        <Switch key="0">
             <Route path="/detail/:id" component={Detail} />
             <Route path="/" component={Search} />
         </Switch>
