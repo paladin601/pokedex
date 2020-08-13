@@ -11,7 +11,7 @@ export default class {
     async findAll() {
         if (!this.pokemons.length > 0) {
             return Promise.all([
-                await fetch(this.baseURL + "?limit=100")
+                await fetch(this.baseURL + "?limit=1000")
                     .then(res => res.json())
                     .then(async data => {
                         let result = data.results
