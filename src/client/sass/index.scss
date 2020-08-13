@@ -1,17 +1,98 @@
 @import 'variable';
 @import 'navbar';
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 
-@mixin mediaQuery($name,$size) {
-    @media (min-width:map-get($media-query,$size)){
-        @include create($name,$size);
-    }
-}
-@mixin create($name,$size) {
-    #{$name}{
-        font: map-get( $font-size, $size ) $font-style;
+
+@mixin mediaQuery($name, $size) {
+    @media (min-width:map-get($media-query, $size)) {
+        @include create($name, $size);
     }
 }
 
-@include create("body","xs");
-@include mediaQuery("body",'sm');
-@include mediaQuery("body",'md');
+@mixin create($name, $size) {
+    #{$name} {
+        font: map-get($font-size, $size) $font-style;
+    }
+}
+
+@include create("body", "xs");
+@include mediaQuery("body", 'sm');
+@include mediaQuery("body", 'md');
+
+
+
+
+//loader
+@mixin delayAnimation($position, $delay) {
+    .loader>span:nth-child(#{$position}) {
+        animation-delay: $delay+s;
+    }
+}
+
+.loader {
+    z-index         : 1400;
+    width           : 100vw;
+    height          : 90vh;
+    background-color: #ffffff;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+
+    &>span {
+        width                    : $size-point-loader;
+        height                   : $size-point-loader;
+        margin                   : 0 2px;
+        background-color         : $color-point-loader;
+        border-radius            : 50%;
+        animation-name           : jumpingDots;
+        animation-duration       : 1.4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+@include delayAnimation(2, 0.4);
+@include delayAnimation(3, 0.8);
+
+@keyframes jumpingDots {
+    40% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.container-cards {
+    display              : grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap         : 1em;
+
+    &>.card {
+        margin    : auto;
+        width     : 175px;
+        box-shadow: 5px 5px 5px #a2a2a2;
+        cursor    : pointer;
+
+        &:hover {
+            transform: scale(1.025);
+            z-index: 100;
+        }
+
+        &>.card-img-top {
+            background     : #f1f2f2;
+            display        : flex;
+            justify-content: center;
+            height         : 96px;
+        }
+
+        &>.card-body {
+            padding: .5rem;
+
+            &>span {
+                font-size: .75rem;
+            }
+        }
+    }
+}

@@ -1,18 +1,18 @@
 import React from 'react';
-import {
-    Switch,
-    Route
-} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Nav from './layout/navbar.jsx'
-import Main from './page/main.jsx'
+import Search from './pages/search.jsx'
+import Detail from './pages/detail.jsx'
+import api from './api/rest-manager'
 
-export default()=> {
-        return (
-            <div>
-                <Nav />
-                <Switch>
-                    <Route path="/" component={Main} />
-                </Switch>
-            </div>
-        );
+let manager = new api();
+window.manager = manager;
+export default () => {
+    return [
+        <Nav key="0" />,
+        <Switch key="1">
+            <Route path="/detail/:id" component={Detail} />
+            <Route path="/" component={Search} />
+        </Switch>
+    ];
 }
