@@ -3,14 +3,13 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 
 export default (props) => {
-    console.log("search", props);
     let pokemons = props.pokemons.filter(obj => obj.name.includes(props.search))
     let history = useHistory();
     const detailPokemon = (event, id) => {
         history.push(`/detail/${id}`);
     }
     return (
-        <div className="container-cards">
+        <div className="container-cards text-capitalize">
             {
                 pokemons.map(pokemon => {
                     return (

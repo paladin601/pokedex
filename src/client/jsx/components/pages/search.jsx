@@ -6,7 +6,7 @@ import Spinner from '../layout/spinner.jsx'
 export default () => {
     const [search, setSearchState] = useState("");
     const [loading, setLoadingState] = useState(true);
-    const [pokemons, setPokemonsState] = useState(true);
+    const [pokemons, setPokemonsState] = useState([]);
     useEffect(() => {
         window.manager.findAll().then(data => {
             setPokemonsState(data)
@@ -21,8 +21,6 @@ export default () => {
 
     const handleChange = (event) => {
         setSearchState(event.target.value);
-        console.log(search);
-        console.log(search);
     }
 
     return [
