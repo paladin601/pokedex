@@ -33,7 +33,7 @@
     z-index         : 1400;
     width           : 100vw;
     height          : 90vh;
-    background-color: #ffffff;
+    background-color: $color-white;
     display         : flex;
     align-items     : center;
     justify-content : center;
@@ -128,7 +128,7 @@
                     border       : 1px solid;
                     padding      : 5px;
                     border-radius: 5px;
-                    color        : white;
+                    color        : $color-white;
                 }
 
                 &>.fire {
