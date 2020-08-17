@@ -25,7 +25,7 @@ npm run copy-cmd   or   yarn copy-cmd
 ####  3 - Run project
 In the Terminal execute command is you install yarn:
 ```
-yarn start
+yarn start-yarn
 ```
 or is you don't install yarn:
 ```
