@@ -1,6 +1,6 @@
 ### Pokedex
 
-* Pokedex [Demo](https://pokedex601.herokuapp.com/).
+* Pokedex [Demo](https://pokedex601.herokuapp.com/). Create with this [API](https://pokeapi.co/)
 
 ####  1 - Dependencies
 
