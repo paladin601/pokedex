@@ -20,7 +20,7 @@ export default () => {
     }
 
     const handleChange = (event) => {
-        setSearchState(event.target.value);
+        setSearchState(event.target.value.toLowerCase());
     }
 
     return [
